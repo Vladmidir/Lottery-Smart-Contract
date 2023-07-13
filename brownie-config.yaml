@@ -1,0 +1,22 @@
+dependencies:
+  - smartcontractkit/chainlink@2.2.0 # QUESTION: where do I get these dependencie names?
+  - OpenZeppelin/openzeppelin-contracts@4.9.2 # ANSWER: GitHub. (orig version was 3.4.0)
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink@2.2.0"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.9.2"
+dotenv: .env
+networks:
+  default: development # default
+  sepolia: 
+    vrf_coordinator: '0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625'
+    eth_usd_price_feed: '0x694AA1769357215DE4FAC081bf1f309aDC325306'
+    link_token: '0x779877A7B0D9E8603169DdbD7836e478b4624789'
+    vrf_wrapper: '0xab18414CD93297B0d12ac29E63Ca20f515b3DB46'
+    verify: True
+  mainnet-fork:
+    eth_usd_price_feed: '0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419'
+wallets:
+  from_key: ${PRIVATE_KEY}
+    
